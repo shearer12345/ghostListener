@@ -48,13 +48,6 @@
 				audio1.volume = audio2.volume = audio3.volume = audio4.volume = 0;
 			}
         }
-        function canPlayThroughCallback() {
-            audioCanPlayThroughCount = audioCanPlayThroughCount + 1;
-            if (audioCanPlayThroughCount >= 5)
-            {
-                seek();
-            }
-        }
 
         function seek(){
             var audio1 = document.getElementById('audio1');
@@ -90,13 +83,7 @@
             var audio3 = document.getElementById('audio3');
             var audio4 = document.getElementById('audio4');
             var audio5 = document.getElementById('audio5');
-             	
-            audio1.oncanplaythrough=canPlayThroughCallback();
-            audio2.oncanplaythrough=canPlayThroughCallback();
-            audio3.oncanplaythrough=canPlayThroughCallback();
-            audio4.oncanplaythrough=canPlayThroughCallback();
-            audio5.oncanplaythrough=canPlayThroughCallback();
-            
+             	       
             audio1.volume = 0.0;
             audio2.volume = 0.0;
             audio3.volume = 0.0;
