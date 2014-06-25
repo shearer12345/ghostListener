@@ -1,0 +1,31 @@
+<html>
+    <head>
+    <title>(Type a title for your page here)</title>
+    
+    <script type="text/javascript"> 
+
+        function seek(){
+            var video1 = document.getElementById('video1');
+
+            var d = new Date();
+
+            //set this depending on how long the video is (
+            var currentTime = d.getSeconds() + (d.getMilliseconds() / 1000.0);
+            video1.currentTime = currentTime;
+        }
+
+        function on_load() {
+            seek();
+            //window.setInterval(seek, 10);
+         }
+    </script>
+    </head>
+
+    <body onload=on_load();>
+
+        <video id='video1' width="320" height="240" controls autoplay loop>
+            <source src="assets/ghostListenerTestvideo.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </body>
+</html>
