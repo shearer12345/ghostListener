@@ -5,7 +5,8 @@
     <script type="text/javascript"> 
 
         var audioCanPlayThroughCount = 0;
-
+        var focussedAudio = 1;
+    
         function changeAudio(streamNo)
         {
 			var audio1 = document.getElementById('audio1');
@@ -14,34 +15,40 @@
 			var audio4 = document.getElementById('audio4');
 			var audio5 = document.getElementById('audio5');
 			
-			if(streamNo == 1)
+            focussedAudio = streamNo;
+
+            document.getElementById('focussedAudioID').innerHTML = focussedAudio;
+
+            seek();
+        }
+
+        function setAudioLevels() {
+			if(focussedAudio == 1)
 			{
 				audio1.volume = 1;
 				audio2.volume = audio3.volume = audio4.volume = audio5.volume = 0;
 			}
-			else if(streamNo == 2)
+			else if(focussedAudio == 2)
 			{
 				audio2.volume = 1;
 				audio1.volume = audio3.volume = audio4.volume = audio5.volume = 0;
 			}
-			else if(streamNo == 3)
+			else if(focussedAudio == 3)
 			{
 				audio3.volume = 1;
 				audio1.volume = audio2.volume = audio4.volume = audio5.volume = 0;
 			}
-			else if(streamNo == 4)
+			else if(focussedAudio == 4)
 			{
 				audio4.volume = 1;
 				audio1.volume = audio2.volume = audio3.volume = audio5.volume = 0;
 			}
-			else if(streamNo == 5)
+			else if(focussedAudio == 5)
 			{
 				audio5.volume = 1;
 				audio1.volume = audio2.volume = audio3.volume = audio4.volume = 0;
 			}
-            seek();
         }
-
         function canPlayThroughCallback() {
             audioCanPlayThroughCount = audioCanPlayThroughCount + 1;
             if (audioCanPlayThroughCount >= 5)
@@ -57,6 +64,8 @@
             var audio4 = document.getElementById('audio4');
             var audio5 = document.getElementById('audio5');
             
+            setAudioLevels();
+
             var d = new Date();
 
             //set this depending on how long the video is (
@@ -71,6 +80,8 @@
             audio3.play();
             audio4.play();
             audio5.play();
+
+            setAudioLevels();
 
         }
 
@@ -87,7 +98,7 @@
             audio4.oncanplaythrough=canPlayThroughCallback();
             audio5.oncanplaythrough=canPlayThroughCallback();
             
-            audio1.volume = 1.0;
+            audio1.volume = 0.0;
             audio2.volume = 0.0;
             audio3.volume = 0.0;
             audio4.volume = 0.0;
@@ -103,7 +114,7 @@
         <button onclick="changeAudio(4);">Audio 4</button>
         <button onclick="changeAudio(5);">Audio 5</button>
         
-        <audio id='audio1' loop volume='1.0' autoplay='autoplay' controls>
+        <audio id='audio1' loop volume='0.0' autoplay='autoplay' controls>
             <source src="assets/1.ogg" type="audio/ogg" >
             <source src="assets/1.mp3" type="audio/mpeg" >
             Your browser does not support the audio element.
@@ -133,5 +144,7 @@
             Your browser does not support the audio element.
         </audio> 
 
+        <span id='focussedAudioID'>blank
+        </span>
     </body>
 </html>
