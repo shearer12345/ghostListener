@@ -25,27 +25,42 @@
 			if(focussedAudio == 1)
 			{
 				audio1.volume = 1;
-				audio2.volume = audio3.volume = audio4.volume = audio5.volume = 0;
+				audio2.volume = 0;
+                audio3.volume = 0;
+                audio4.volume = 0;
+                audio5.volume = 0;
 			}
 			else if(focussedAudio == 2)
 			{
+				audio1.volume = 0;
 				audio2.volume = 1;
-				audio1.volume = audio3.volume = audio4.volume = audio5.volume = 0;
+                audio3.volume = 0;
+                audio4.volume = 0;
+                audio5.volume = 0;
 			}
 			else if(focussedAudio == 3)
 			{
-				audio3.volume = 1;
-				audio1.volume = audio2.volume = audio4.volume = audio5.volume = 0;
+				audio1.volume = 0;
+				audio2.volume = 0;
+                audio3.volume = 1;
+                audio4.volume = 0;
+                audio5.volume = 0;
 			}
 			else if(focussedAudio == 4)
 			{
-				audio4.volume = 1;
-				audio1.volume = audio2.volume = audio3.volume = audio5.volume = 0;
+				audio1.volume = 0;
+				audio2.volume = 0;
+                audio3.volume = 0;
+                audio4.volume = 1;
+                audio5.volume = 0;
 			}
 			else if(focussedAudio == 5)
 			{
-				audio5.volume = 1;
-				audio1.volume = audio2.volume = audio3.volume = audio4.volume = 0;
+				audio1.volume = 0;
+				audio2.volume = 0;
+                audio3.volume = 0;
+                audio4.volume = 0;
+                audio5.volume = 1;
 			}
         }
 
