@@ -3,107 +3,34 @@
     <title>(Type a title for your page here)</title>
         <script type="text/javascript"> 
 
-        var audioCanPlayThroughCount = 0;
-        var focussedAudio = 1;
+        var focussedAudio = 0;
     
         function changeAudio(streamNo)
-        {
-			var audio1 = document.getElementById('audio1');
-			var audio2 = document.getElementById('audio2');
-			var audio3 = document.getElementById('audio3');
-			var audio4 = document.getElementById('audio4');
-			var audio5 = document.getElementById('audio5');
-			
+        {   
+            //stop present
+            if (focussedAudio != 0) {
+                document.getElementById('audio'+focussedAudio).pause();
+            }
+
             focussedAudio = streamNo;
-
             document.getElementById('focussedAudioID').innerHTML = focussedAudio;
-
-            seek();
-        }
-
-        function setAudioLevels() {
-			if(focussedAudio == 1)
-			{
-				audio1.volume = 1;
-				audio2.volume = 0;
-                audio3.volume = 0;
-                audio4.volume = 0;
-                audio5.volume = 0;
-			}
-			else if(focussedAudio == 2)
-			{
-				audio1.volume = 0;
-				audio2.volume = 1;
-                audio3.volume = 0;
-                audio4.volume = 0;
-                audio5.volume = 0;
-			}
-			else if(focussedAudio == 3)
-			{
-				audio1.volume = 0;
-				audio2.volume = 0;
-                audio3.volume = 1;
-                audio4.volume = 0;
-                audio5.volume = 0;
-			}
-			else if(focussedAudio == 4)
-			{
-				audio1.volume = 0;
-				audio2.volume = 0;
-                audio3.volume = 0;
-                audio4.volume = 1;
-                audio5.volume = 0;
-			}
-			else if(focussedAudio == 5)
-			{
-				audio1.volume = 0;
-				audio2.volume = 0;
-                audio3.volume = 0;
-                audio4.volume = 0;
-                audio5.volume = 1;
-			}
-        }
-
-        function seek(){
-            var audio1 = document.getElementById('audio1');
-            var audio2 = document.getElementById('audio2');
-            var audio3 = document.getElementById('audio3');
-            var audio4 = document.getElementById('audio4');
-            var audio5 = document.getElementById('audio5');
-            
-            setAudioLevels();
 
             var d = new Date();
 
+            //seek incoming
             //set this depending on how long the video is (
             var currentTime = d.getSeconds() + (d.getMilliseconds() / 1000.0);
-            audio1.currentTime = currentTime;
-            audio2.currentTime = currentTime;
-            audio3.currentTime = currentTime;
-            audio4.currentTime = currentTime;
-            audio5.currentTime = currentTime;
-            audio1.play();
-            audio2.play();
-            audio3.play();
-            audio4.play();
-            audio5.play();
+            var currentAudio = document.getElementById('audio'+focussedAudio);
 
-            setAudioLevels();
+            currentAudio.currentTime = currentTime;
 
+            //play incoming	
+            currentAudio.seeked = function(){
+                currentAudio.play();
+            }();
         }
 
         function on_load() {
-            var audio1 = document.getElementById('audio1');
-            var audio2 = document.getElementById('audio2');
-            var audio3 = document.getElementById('audio3');
-            var audio4 = document.getElementById('audio4');
-            var audio5 = document.getElementById('audio5');
-             	       
-            audio1.volume = 0.0;
-            audio2.volume = 0.0;
-            audio3.volume = 0.0;
-            audio4.volume = 0.0;
-            audio5.volume = 0.0;
          }
     </script>
     </head>
@@ -116,32 +43,32 @@
         <button onclick="changeAudio(5);">Audio 5</button>
         
         <audio id='audio1' loop volume='0.0' controls>
-            <source src="assets/1.ogg" type="audio/ogg" >
             <source src="assets/1.mp3" type="audio/mpeg" >
+            <source src="assets/1.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio>   
 
         <audio id='audio2' loop volume='0.0' controls>
-            <source src="assets/2.ogg" type="audio/ogg" >
             <source src="assets/2.mp3" type="audio/mpeg" >
+            <source src="assets/2.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
         <audio id='audio3' loop volume='0.0' controls>
-            <source src="assets/3.ogg" type="audio/ogg" >
             <source src="assets/3.mp3" type="audio/mpeg" >
+            <source src="assets/3.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
         <audio id='audio4' loop volume='0.0' controls>
-            <source src="assets/4.ogg" type="audio/ogg" >
             <source src="assets/4.mp3" type="audio/mpeg" >
+            <source src="assets/4.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
         
         <audio id='audio5' loop volume='0.0' controls>
-            <source src="assets/5.ogg" type="audio/ogg" >
             <source src="assets/5.mp3" type="audio/mpeg" >
+            <source src="assets/5.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
