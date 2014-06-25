@@ -1,0 +1,52 @@
+<html>
+    <head>
+    <title>(Type a title for your page here)</title>
+    
+    <script type="text/javascript"> 
+
+        function seek(){
+            var audio1 = document.getElementById('audio1');
+            var audio2 = document.getElementById('audio2');
+            var audio3 = document.getElementById('audio3');
+            var audio4 = document.getElementById('audio4');
+
+            var d = new Date();
+
+            //set this depending on how long the video is (
+            var currentTime = d.getSeconds() + (d.getMilliseconds() / 1000.0);
+            audio1.currentTime = currentTime;
+            audio2.currentTime = currentTime;
+            audio3.currentTime = currentTime;
+            audio4.currentTime = currentTime;
+        }
+
+        function on_load() {
+            seek();
+            //window.setInterval(seek, 10);
+         }
+    </script>
+    </head>
+
+    <body onload=on_load();>
+        <audio id='audio1' controls autoplay loop>
+            <source src="assets/1.ogg" type="audio/ogg" >
+            Your browser does not support the audio element.
+        </audio> 
+
+        <audio id='audio2' controls autoplay loop>
+            <source src="assets/2.ogg" type="audio/ogg" >
+            Your browser does not support the audio element.
+        </audio> 
+
+        <audio id='audio3' controls autoplay loop>
+            <source src="assets/3.ogg" type="audio/ogg" >
+            Your browser does not support the audio element.
+        </audio> 
+
+        <audio id='audio4' controls autoplay loop>
+            <source src="assets/4.ogg" type="audio/ogg" >
+            Your browser does not support the audio element.
+        </audio> 
+
+    </body>
+</html>
