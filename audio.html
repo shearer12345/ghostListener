@@ -57,6 +57,12 @@
         }
 
         function on_load() {
+            audio1.volume = 1;
+            audio2.volume = 0;
+            audio3.volume = 0;
+            audio4.volume = 0;
+            audio5.volume = 0;
+        	
             seek();
             //window.setInterval(seek, 10);
          }
@@ -70,27 +76,27 @@
         <button onclick="changeAudio(4);">Audio 4</button>
         <button onclick="changeAudio(5);">Audio 5</button>
         
-        <audio id='audio1' controls autoplay loop>
+        <audio id='audio1' autoplay loop>
             <source src="assets/1.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio2' controls autoplay loop>
+        <audio id='audio2' autoplay loop>
             <source src="assets/2.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio3' controls autoplay loop>
+        <audio id='audio3' autoplay loop>
             <source src="assets/3.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio4' controls autoplay loop>
+        <audio id='audio4' autoplay loop>
             <source src="assets/4.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
         
-        <audio id='audio5' controls autoplay loop>
+        <audio id='audio5' autoplay loop>
             <source src="assets/5.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
