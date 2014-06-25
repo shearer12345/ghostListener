@@ -55,6 +55,12 @@
             audio3.currentTime = currentTime;
             audio4.currentTime = currentTime;
             audio5.currentTime = currentTime;
+            audio1.play();
+            audio2.play();
+            audio3.play();
+            audio4.play();
+            audio5.play();
+
         }
 
         function on_load() {
@@ -83,27 +89,27 @@
         <button onclick="changeAudio(4);">Audio 4</button>
         <button onclick="changeAudio(5);">Audio 5</button>
         
-        <audio id='audio1' autoplay loop>
+        <audio id='audio1' loop>
             <source src="assets/1.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio2' autoplay loop>
+        <audio id='audio2' loop>
             <source src="assets/2.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio3' autoplay loop>
+        <audio id='audio3' loop>
             <source src="assets/3.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio4' autoplay loop>
+        <audio id='audio4' loop>
             <source src="assets/4.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
         
-        <audio id='audio5' autoplay loop>
+        <audio id='audio5' loop>
             <source src="assets/5.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 

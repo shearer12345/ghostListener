@@ -12,6 +12,7 @@
             //set this depending on how long the video is (
             var currentTime = d.getSeconds() + (d.getMilliseconds() / 1000.0);
             video1.currentTime = currentTime;
+            video1.play();
         }
 
         function on_load() {
@@ -23,7 +24,7 @@
 
     <body onload=on_load();>
 
-        <video id='video1' width="320" height="240" controls autoplay loop>
+        <video id='video1' width="320" height="240" loop>
             <source src="assets/ghostListenerTestvideo.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
