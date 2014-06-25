@@ -1,6 +1,16 @@
 <html>
     <head>
-    <title>(Type a title for your page here)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/ghoststyles.css">
+    <!-- End link to CSS file -->
+    
+    <title>Ghost Listener </title>
+     <style>body {background-color:#000000}</style>
+     
+ 
+   
         <script type="text/javascript"> 
 
         var focussedAudio = 0;
@@ -49,39 +59,62 @@
     </head>
 
     <body onload=on_load();>
-        <button onclick="changeAudio(1);">Audio 1</button>
-        <button onclick="changeAudio(2);">Audio 2</button>
-        <button onclick="changeAudio(3);">Audio 3</button>
-        <button onclick="changeAudio(4);">Audio 4</button>
-        <button onclick="changeAudio(5);">Audio 5</button>
+
+   <div id="page-wrap">
+		<div id="inside">
+    <img src="assets/ghostlistener_320.png" alt="Smiley face" width="320" height="98"> 
+    
+  <!-- Buttons -->
+    
+  <a href="#" class="inky" onclick="changeAudio(1);">Inky</a>
+    
+  <a href="#" class="pinky" onclick="changeAudio(2);">Pinky</a>
+  
+  <a href="#" class="blinky" onclick="changeAudio(3);">Blinky</a>
+  
+  <a href="#" class="clyde" onclick="changeAudio(4);">Clyde</a>
+  
+    <a href="#" class="barbara" onclick="changeAudio(6);">Barbara</a>
+  
+  <a href="#" class="pacman" onclick="changeAudio(5);">Pacman</a>
+  
+
+  
+  <!-- End buttons -->
         
-        <audio id='audio1' loop volume='0' controls>
+        <audio id='audio1' loop volume='0' preload="auto" controls>
             <source src="assets/1.mp3" type="audio/mpeg" >
             <source src="assets/1.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio>   
 
-        <audio id='audio2' loop volume='0' controls>
+        <audio id='audio2' loop volume='0' preload="auto" controls>
             <source src="assets/2.mp3" type="audio/mpeg" >
             <source src="assets/2.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio3' loop volume='0' controls>
+        <audio id='audio3' loop volume='0' preload="auto" controls>
             <source src="assets/3.mp3" type="audio/mpeg" >
             <source src="assets/3.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio4' loop volume='0' controls>
+        <audio id='audio4' loop volume='0' preload="auto" controls>
             <source src="assets/4.mp3" type="audio/mpeg" >
             <source src="assets/4.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
         
-        <audio id='audio5' loop volume='0' controls>
+        <audio id='audio5' loop volume='0' preload="auto" controls>
             <source src="assets/5.mp3" type="audio/mpeg" >
             <source src="assets/5.ogg" type="audio/ogg" >
+            Your browser does not support the audio element.
+        </audio> 
+
+        <audio id='audio6' loop volume='0' preload="auto" controls>
+            <source src="assets/6.mp3" type="audio/mpeg" >
+            <source src="assets/6.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
