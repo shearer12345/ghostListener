@@ -4,12 +4,48 @@
     
     <script type="text/javascript"> 
 
+        function changeAudio(streamNo)
+        {
+			var audio1 = document.getElementById('audio1');
+			var audio2 = document.getElementById('audio2');
+			var audio3 = document.getElementById('audio3');
+			var audio4 = document.getElementById('audio4');
+			var audio5 = document.getElementById('audio5');
+			
+			if(number == 1)
+			{
+				audio1.volume = 1;
+				audio2.volume = audio3.volume = audio4.volume = audio5.volume = 0;
+			}
+			else if(number == 2)
+			{
+				audio2.volume = 1;
+				audio1.volume = audio3.volume = audio4.volume = audio5.volume = 0;
+			}
+			else if(number == 3)
+			{
+				audio3.volume = 1;
+				audio1.volume = audio2.volume = audio4.volume = audio5.volume = 0;
+			}
+			else if(number == 4)
+			{
+				audio4.volume = 1;
+				audio1.volume = audio2.volume = audio3.volume = audio5.volume = 0;
+			}
+			else if(number == 5)
+			{
+				audio5.volume = 1;
+				audio1.volume = audio2.volume = audio3.volume = audio4.volume = 0;
+			}
+        }
+
         function seek(){
             var audio1 = document.getElementById('audio1');
             var audio2 = document.getElementById('audio2');
             var audio3 = document.getElementById('audio3');
             var audio4 = document.getElementById('audio4');
-
+            var audio5 = document.getElementById('audio5');
+            
             var d = new Date();
 
             //set this depending on how long the video is (
@@ -28,6 +64,12 @@
     </head>
 
     <body onload=on_load();>
+        <button onclick="changeAudio(1);">Audio 1</button>
+        <button onclick="changeAudio(2);">Audio 2</button>
+        <button onclick="changeAudio(3);">Audio 3</button>
+        <button onclick="changeAudio(4);">Audio 4</button>
+        <button onclick="changeAudio(5);">Audio 5</button>
+        
         <audio id='audio1' controls autoplay loop>
             <source src="assets/1.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
@@ -45,6 +87,11 @@
 
         <audio id='audio4' controls autoplay loop>
             <source src="assets/4.ogg" type="audio/ogg" >
+            Your browser does not support the audio element.
+        </audio> 
+        
+        <audio id='audio5' controls autoplay loop>
+            <source src="assets/5.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
