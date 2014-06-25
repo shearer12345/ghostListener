@@ -27,14 +27,22 @@
             //play incoming	
             currentAudio.play();
 
-            //seek others
+            //seek others and make sure paused
             for (i = 1; i < 7; i++) {
                 if (i != focussedAudio)
-                    document.getElementById('audio'+i).currentTime = currentTime;
+                {
+                    currentAudio = document.getElementById('audio'+i);
+                    currentAudio.pause();
+                    currentAudio.currentTime = currentTime;
+                }
             }
         }
 
         function on_load() {
+            for (i = 1; i < 7; i++) {
+                document.getElementById('audio'+i).pause();
+            }
+
          }
     </script>
     </head>
@@ -46,31 +54,31 @@
         <button onclick="changeAudio(4);">Audio 4</button>
         <button onclick="changeAudio(5);">Audio 5</button>
         
-        <audio id='audio1' loop volume='0.0' controls>
+        <audio id='audio1' loop volume='0.0' controls autoplay>
             <source src="assets/1.mp3" type="audio/mpeg" >
             <source src="assets/1.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio>   
 
-        <audio id='audio2' loop volume='0.0' controls>
+        <audio id='audio2' loop volume='0.0' controls autoplay>
             <source src="assets/2.mp3" type="audio/mpeg" >
             <source src="assets/2.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio3' loop volume='0.0' controls>
+        <audio id='audio3' loop volume='0.0' controls autoplay>
             <source src="assets/3.mp3" type="audio/mpeg" >
             <source src="assets/3.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
 
-        <audio id='audio4' loop volume='0.0' controls>
+        <audio id='audio4' loop volume='0.0' controls autoplay>
             <source src="assets/4.mp3" type="audio/mpeg" >
             <source src="assets/4.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
         </audio> 
         
-        <audio id='audio5' loop volume='0.0' controls>
+        <audio id='audio5' loop volume='0.0' controls autoplay>
             <source src="assets/5.mp3" type="audio/mpeg" >
             <source src="assets/5.ogg" type="audio/ogg" >
             Your browser does not support the audio element.
