@@ -4,6 +4,16 @@
     
     <script type="text/javascript"> 
 
+        var videoCanPlayThroughCount = 0;
+
+        function canPlayThroughCallback() {
+            videoCanPlayThroughCount = videoCanPlayThroughCount + 1;
+            if (videoCanPlayThroughCount >= 1)
+            {
+                seek();
+            }
+        }
+
         function seek(){
             var video1 = document.getElementById('video1');
 
@@ -16,8 +26,7 @@
         }
 
         function on_load() {
-            seek();
-            //window.setInterval(seek, 10);
+            video1.oncanplaythrough=canPlayThroughCallback();
          }
     </script>
     </head>

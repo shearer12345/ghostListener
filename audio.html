@@ -4,6 +4,8 @@
     
     <script type="text/javascript"> 
 
+        var audioCanPlayThroughCount = 0;
+
         function changeAudio(streamNo)
         {
 			var audio1 = document.getElementById('audio1');
@@ -37,6 +39,14 @@
 				audio5.volume = 1;
 				audio1.volume = audio2.volume = audio3.volume = audio4.volume = 0;
 			}
+        }
+
+        function canPlayThroughCallback() {
+            audioCanPlayThroughCount = audioCanPlayThroughCount + 1;
+            if (audioCanPlayThroughCount >= 5)
+            {
+                seek();
+            }
         }
 
         function seek(){
@@ -76,8 +86,12 @@
             audio4.volume = 0;
             audio5.volume = 0;
         	
-            seek();
-            //window.setInterval(seek, 10);
+            audio1.oncanplaythrough=canPlayThroughCallback();
+            audio2.oncanplaythrough=canPlayThroughCallback();
+            audio3.oncanplaythrough=canPlayThroughCallback();
+            audio4.oncanplaythrough=canPlayThroughCallback();
+            audio5.oncanplaythrough=canPlayThroughCallback();
+
          }
     </script>
     </head>
