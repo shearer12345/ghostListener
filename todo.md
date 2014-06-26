@@ -1,13 +1,8 @@
 #todo
 
 
-- use new video
-
-- ?convert video
-- sync for 2 minute loop
 
 
-- ?other video formats?
 - ?test on iphone
 
 ##DONE
@@ -21,5 +16,9 @@
 - add Ryan's UI(2) changes
 - convert audio
 - add audio assets
-- add videos assets
 - use new audio
+- convert video to webm
+- add videos assets
+- use new video
+- sync for 2 minute loop
+- remove controls from video

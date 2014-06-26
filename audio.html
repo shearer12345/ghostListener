@@ -29,8 +29,15 @@
             var d = new Date();
 
             //seek incoming
-            //set this depending on how long the video is (
-            var currentTime = d.getSeconds() + (d.getMilliseconds() / 1000.0);            
+            //seek to the current second of realtime minute
+            var currentTime = d.getSeconds() + (d.getMilliseconds() / 1000.0);     
+
+            //seek later by a minute if an odd numbered minute
+            if ( (d.getMinutes() % 2) == 1)
+            {
+                currentTime = currentTime + 60;
+            }
+       
             var currentAudio = document.getElementById('audio'+focussedAudio);
 
             currentAudio.currentTime = currentTime;

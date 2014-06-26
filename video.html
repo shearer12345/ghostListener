@@ -19,8 +19,15 @@
 
             var d = new Date();
 
-            //set this depending on how long the video is (
+            //seek to the current second of realtime minute
             var currentTime = d.getSeconds() + (d.getMilliseconds() / 1000.0);
+
+            //seek later by a minute if an odd numbered minute
+            if ( (d.getMinutes() % 2) == 1)
+            {
+                currentTime = currentTime + 60;
+            }
+
             video1.currentTime = currentTime;
             video1.play();
         }
@@ -35,7 +42,7 @@
       <center>
  
       <div>  <img src="assets/title.png" alt="Smiley face" width="600" height="184">    </div>
-        <video id='video1' width='50%' height='auto' loop controls>
+        <video id='video1' width='50%' height='auto' loop>
             <source src="assets/Hackfest_Animation_720p_normalQuality.mp4" type="video/mp4">
             <source src="assets/Hackfest_Animation_720p.webm" type="video/webm">
             Your browser does not support the video tag.
