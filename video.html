@@ -24,6 +24,11 @@
 
         function on_load() {
             video1.oncanplaythrough=seek();
+
+            setInterval(function(){ 
+                var video1 = document.getElementById('video1');
+                document.getElementById('currentTime').innerHTML = video1.currentTime.toFixed(2);
+            }, 500);
          }
     </script>
     </head>
@@ -38,6 +43,8 @@
             Your browser does not support the video tag.
         </video>
 
+        <span style='color:blue' id='currentTime'>time unset</span>
+        asdfadsf
         <!--a href="#" class="video" onclick="seek();">Seek</a-->
       </center>
     </body>
