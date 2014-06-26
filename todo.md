@@ -1,12 +1,11 @@
 #todo
 
+
+- use new video
+
+- ?convert video
 - sync for 2 minute loop
 
-- convert audio
-- convert video
-
-- use new audio
-- use new video
 
 - ?other video formats?
 - ?test on iphone
@@ -20,3 +19,7 @@
 - remove controls
 - add both and video UI
 - add Ryan's UI(2) changes
+- convert audio
+- add audio assets
+- add videos assets
+- use new audio
