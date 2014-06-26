@@ -19,3 +19,4 @@
 - test on firefox android
 - remove controls
 - add both and video UI
+- add Ryan's UI(2) changes
