@@ -4,17 +4,7 @@
      <style>body {background-color:#000000}</style>
     <script type="text/javascript"> 
 
-        var videoCanPlayThroughCount = 0;
-
-        function canPlayThroughCallback() {
-            videoCanPlayThroughCount = videoCanPlayThroughCount + 1;
-            if (videoCanPlayThroughCount >= 1)
-            {
-                seek();
-            }
-        }
-
-        function seek(){
+       function seek(){
             var video1 = document.getElementById('video1');
 
             var d = new Date();
@@ -33,7 +23,7 @@
         }
 
         function on_load() {
-            video1.oncanplaythrough=canPlayThroughCallback();
+            video1.oncanplaythrough=seek();
          }
     </script>
     </head>
@@ -47,6 +37,8 @@
             <source src="assets/Hackfest_Animation_720p.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
+
+        <a href="#" class="video" onclick="seek();">Seek</a>
       </center>
     </body>
 </html>

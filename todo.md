@@ -1,9 +1,7 @@
 #todo
 
-
-
-
 - ?test on iphone
+- video playing doesn't seek correctly on linux&Chrome
 
 ##DONE
 
